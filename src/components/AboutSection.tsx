@@ -1,0 +1,66 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const values = [
+  { label: "FOCUS", description: "Dedicated to mastering AI-driven creativity" },
+  { label: "BUILD", description: "Constantly creating and experimenting" },
+  { label: "FREEDOM", description: "Independent thinking, unlimited vision" },
+  { label: "CREATE IMPACT", description: "Making content that inspires" },
+];
+
+export default function AboutSection() {
+  return (
+    <section id="about" className="relative py-32 px-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            About Me
+          </h2>
+          <div className="w-20 h-[1px] gradient-line mx-auto" />
+        </motion.div>
+
+        {/* Bio */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center mb-16"
+        >
+          <p className="text-[#c0c0c8] text-lg leading-relaxed max-w-2xl mx-auto">
+            Seorang AI Video Creator yang menggabungkan teknologi generative AI
+            dengan visi kreatif untuk menghasilkan konten sinematik. Mengeksplorasi
+            intersection antara AI, Web3, dan masa depan digital.
+          </p>
+        </motion.div>
+
+        {/* Values grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {values.map((item, index) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className="p-6 rounded-xl border border-white/5 bg-[#12121a]/50 card-hover"
+            >
+              <h3 className="text-white font-semibold tracking-wider text-sm mb-2">
+                {item.label}
+              </h3>
+              <p className="text-[#8a8a96] text-sm">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
