@@ -70,19 +70,19 @@ export default function SocialSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex flex-col items-center text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Connect With Me
           </h2>
-          <div className="w-20 h-[1px] gradient-line mx-auto mb-4" />
+          <div className="w-20 h-[1px] gradient-line mb-4" />
           <p className="text-[#8a8a96] text-base">
             Follow my journey across platforms
           </p>
         </motion.div>
 
         {/* Social links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
           {socials.map((social, index) => (
             <motion.a
               key={social.name}
@@ -93,7 +93,7 @@ export default function SocialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="group p-5 rounded-xl border border-white/5 bg-[#12121a]/50 card-hover flex items-start gap-4"
+              className="group w-full p-5 rounded-xl border border-white/5 bg-[#12121a]/50 card-hover flex items-start gap-4"
             >
               <div className="text-[#8a8a96] group-hover:text-white transition-colors duration-200 mt-0.5">
                 {social.icon}

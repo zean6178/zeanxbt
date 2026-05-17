@@ -59,12 +59,12 @@ export default function PortfolioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-4"
+          className="flex flex-col items-center text-center mb-4"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             AI Video Portfolio
           </h2>
-          <div className="w-20 h-[1px] gradient-line mx-auto mb-4" />
+          <div className="w-20 h-[1px] gradient-line mb-4" />
           <p className="text-[#8a8a96] text-base">
             Karya-karya AI video yang dibuat dengan teknologi generative AI
           </p>
