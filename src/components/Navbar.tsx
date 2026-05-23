@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -12,83 +11,56 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass-strong shadow-lg shadow-black/50"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="relative group">
-          <span className="font-[var(--font-orbitron)] text-xl font-bold tracking-[0.2em] text-glow-white">
-            <span className="text-white">ZEAN</span>
-            <span className="text-neon-blue">XBT</span>
-          </span>
-          <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-blue group-hover:w-full transition-all duration-300" />
-        </a>
+    <nav className="fixed top-0 left-0 right-0 z-[500] px-6 md:px-12 py-5 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent backdrop-blur-[2px]">
+      <a href="#" className="font-[var(--font-michroma)] text-[18px] tracking-[0.15em] text-metallic">
+        zXBT
+      </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+      {/* Desktop */}
+      <ul className="hidden md:flex gap-9 list-none">
+        {navLinks.map((link) => (
+          <li key={link.href}>
             <a
-              key={link.href}
               href={link.href}
-              className="relative text-sm text-silver-dark hover:text-neon-blue transition-colors duration-300 tracking-wider uppercase font-medium group"
+              className="nav-underline relative font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.25em] uppercase text-muted no-underline transition-colors duration-300 hover:text-chrome"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-blue group-hover:w-full transition-all duration-300" />
             </a>
-          ))}
-        </div>
+          </li>
+        ))}
+      </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[5px]" : ""}`} />
-        </button>
-      </div>
+      {/* Mobile hamburger */}
+      <button
+        onClick={() => setMobileOpen(!mobileOpen)}
+        className="md:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Toggle menu"
+      >
+        <span className={`w-6 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
+        <span className={`w-6 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+        <span className={`w-6 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
+      </button>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden glass-strong border-t border-white/5 px-6 py-6"
-        >
+        <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-[var(--glass-border)] px-6 py-6 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm text-silver-dark hover:text-neon-blue transition-colors duration-300 tracking-wider uppercase font-medium py-2"
+                className="font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.25em] uppercase text-muted hover:text-chrome transition-colors py-2"
               >
                 {link.label}
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 }

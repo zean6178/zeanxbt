@@ -1,143 +1,136 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+
+const particles = [
+  { left: "10%", dur: "9s", delay: "0s", drift: "30px" },
+  { left: "20%", dur: "12s", delay: "2s", drift: "-20px" },
+  { left: "35%", dur: "8s", delay: "4s", drift: "15px" },
+  { left: "55%", dur: "14s", delay: "1s", drift: "-35px" },
+  { left: "70%", dur: "10s", delay: "3s", drift: "25px" },
+  { left: "85%", dur: "11s", delay: "5s", drift: "-15px" },
+  { left: "45%", dur: "7s", delay: "6s", drift: "40px" },
+];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/hero-banner.png"
-          alt="Futuristic cityscape"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_40%,rgba(30,70,140,0.15)_0%,transparent_60%),radial-gradient(ellipse_40%_40%_at_75%_35%,rgba(74,158,255,0.08)_0%,transparent_50%),linear-gradient(180deg,#000_0%,#020408_50%,#000_100%)]" />
+
+      {/* Animated grid */}
+      <div className="hero-grid" />
+
+      {/* Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {particles.map((p, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: p.left,
+              ["--dur" as string]: p.dur,
+              ["--delay" as string]: p.delay,
+              ["--drift" as string]: p.drift,
+            }}
+          />
+        ))}
       </div>
-
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-grid opacity-30" />
-
-      {/* Cinematic ambient glow */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-neon-blue/5 cinematic-blur" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-neon-blue/3 cinematic-blur" />
-
-      {/* Radial gradient overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,black_80%)]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="flex flex-col items-center text-center">
-          {/* Profile Avatar */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-6"
-          >
-            <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden glow-ring-strong border-2 border-neon-blue/30">
-              <Image
-                src="/profile-avatar.jpg"
-                alt="ZeanDarren"
-                fill
-                className="object-cover"
-                priority
-              />
+      <div className="relative z-10 px-6 md:px-12 pt-[100px] max-w-[700px]">
+        {/* Tag */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hero-tag-line flex items-center gap-3 font-[var(--font-rajdhani)] text-[11px] font-semibold tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-6"
+        >
+          // VERSION 2.0 &nbsp;&nbsp; ONLINE
+        </motion.div>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="glitch font-[var(--font-michroma)] text-[clamp(52px,8vw,96px)] font-normal leading-[0.95] tracking-[-0.02em] mb-2"
+          data-text="zeanXBT"
+        >
+          <span className="text-chrome">z</span>
+          <span className="text-ean-gradient">ean</span>
+          <span className="text-blue-gradient">XBT</span>
+        </motion.h1>
+
+        {/* Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="font-[var(--font-rajdhani)] text-[14px] font-medium tracking-[0.35em] text-muted uppercase mb-10"
+        >
+          <span className="text-[var(--blue-glow)]">AI</span> ×{" "}
+          <span className="text-[var(--blue-glow)]">WEB3</span> ×{" "}
+          <span className="text-[var(--blue-glow)]">FUTURE</span>
+        </motion.div>
+
+        {/* Roles */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex flex-col gap-2 mb-12"
+        >
+          {["Web3 Moderator & Ambassador", "AI Video Creator", "Web3 Community Builder"].map((role) => (
+            <div key={role} className="flex items-center gap-3 text-[15px] font-normal tracking-[0.1em] text-[rgba(200,212,224,0.7)]">
+              <span className="font-[var(--font-michroma)] text-[10px] text-[var(--blue-glow)] opacity-70">//</span>
+              {role}
             </div>
-          </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Status badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8"
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex gap-4 flex-wrap"
+        >
+          <a
+            href="#portfolio"
+            className="clip-btn btn-primary-gradient px-8 py-3.5 font-[var(--font-rajdhani)] text-[12px] font-bold tracking-[0.3em] uppercase text-black no-underline inline-flex items-center gap-2"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs tracking-[0.2em] uppercase text-silver-dark">
-              <span className="w-2 h-2 rounded-full bg-neon-blue neon-pulse" />
-              Available for Web3 Projects
-            </span>
-          </motion.div>
-
-          {/* Main title */}
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-[var(--font-orbitron)] text-5xl sm:text-6xl md:text-8xl font-bold tracking-wider mb-6"
+            View Portfolio
+          </a>
+          <a
+            href="#contact"
+            className="clip-btn btn-secondary-glow px-8 py-3.5 font-[var(--font-rajdhani)] text-[12px] font-bold tracking-[0.3em] uppercase text-[var(--silver)] no-underline border border-[rgba(200,212,224,0.2)] bg-transparent inline-flex items-center gap-2 transition-all duration-300 hover:text-chrome"
           >
-            <span className="text-chrome">ZEAN</span>
-            <span className="text-neon-blue text-glow">XBT</span>
-          </motion.h1>
-
-          {/* Tagline row */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base text-silver-dark tracking-[0.3em] uppercase mb-8"
-          >
-            <span>AI</span>
-            <span className="text-neon-blue">×</span>
-            <span>Web3</span>
-            <span className="text-neon-blue">×</span>
-            <span>Future</span>
-          </motion.div>
-
-          {/* Role descriptions */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col gap-2 text-silver text-base md:text-lg mb-12 max-w-2xl"
-          >
-            <p>Full-time Web3 Moderator & Ambassador</p>
-            <p className="text-silver-dark">
-              AI Video Creator • Web3 Community Builder
-            </p>
-          </motion.div>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
-            <a
-              href="#portfolio"
-              className="btn-neon px-8 py-3 rounded-lg font-medium tracking-wider text-sm uppercase"
-            >
-              <span>View Portfolio</span>
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 rounded-lg font-medium tracking-wider text-sm uppercase border border-white/20 text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300"
-            >
-              Contact Me
-            </a>
-          </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          >
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-[10px] text-silver-dark tracking-[0.3em] uppercase">
-                Scroll
-              </span>
-              <div className="w-[1px] h-8 bg-gradient-to-b from-neon-blue to-transparent" />
-            </div>
-          </motion.div>
-        </div>
+            Contact Me
+          </a>
+        </motion.div>
       </div>
+
+      {/* Status bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.1 }}
+        className="absolute bottom-10 left-6 md:left-12 flex gap-10 items-center"
+      >
+        {[
+          { label: "Focus", value: "SHARP" },
+          { label: "Status", value: "BUILDING" },
+          { label: "Mission", value: "FREEDOM" },
+        ].map((item) => (
+          <div key={item.label} className="font-[var(--font-michroma)] text-[10px] tracking-[0.2em] text-[rgba(200,212,224,0.3)] uppercase">
+            {item.label}
+            <span className="block text-[var(--blue-glow)] text-[14px] font-[var(--font-rajdhani)] font-semibold">
+              {item.value}
+            </span>
+          </div>
+        ))}
+      </motion.div>
     </section>
   );
 }

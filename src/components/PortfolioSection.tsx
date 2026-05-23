@@ -1,123 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Play, Image, Users } from "lucide-react";
 
 const portfolioItems = [
-  {
-    title: "AI Video Content",
-    category: "AI Creator",
-    description: "Cinematic AI-generated short films and visual stories",
-    icon: <Play className="w-5 h-5" />,
-    link: "https://x.com/zeandrn",
-    tag: "Video",
-  },
-  {
-    title: "Thread Writing & Graphic Design",
-    category: "Content",
-    description: "InfoFi-driven threads and graphic design showcased to the Web3 world",
-    icon: <Image className="w-5 h-5" />,
-    link: "https://x.com/zeandrn",
-    tag: "Design",
-  },
-  {
-    title: "Manta Indonesia Community",
-    category: "Community",
-    description: "Built from 0 to 7K members within one month as part of the Manta Indonesia Team",
-    icon: <Users className="w-5 h-5" />,
-    link: "https://t.me/yogiczbaeng/54832",
-    tag: "Growth",
-  },
-  {
-    title: "StoryChain Campaigns",
-    category: "Campaign",
-    description: "Led campaigns attracting 100K+ participants and 100% growth in Mini App sign-ups",
-    icon: <Users className="w-5 h-5" />,
-    link: "https://x.com/zeandrn",
-    tag: "Campaign",
-  },
-  {
-    title: "Coinfest Asia 2024",
-    category: "Event",
-    description: "Web3 Community Crew in Bali — hosted cross-project AMAs and community events",
-    icon: <Users className="w-5 h-5" />,
-    link: "https://x.com/zeandrn/status/1744648272541893017",
-    tag: "Event",
-  },
-  {
-    title: "Running Blockchain Nodes",
-    category: "Technical",
-    description: "Running and maintaining blockchain nodes across multiple networks",
-    icon: <ExternalLink className="w-5 h-5" />,
-    link: "https://x.com/zeandrn",
-    tag: "Node",
-  },
+  { type: "AI Video", title: "Cinematic AI Reels", sub: "Web3 Brand Visuals", bg: 1 },
+  { type: "Branding", title: "Web3 Visual Identity", sub: "Logo & Brand System", bg: 2 },
+  { type: "Community", title: "Ambassador Campaign", sub: "Growth & Outreach", bg: 3 },
+  { type: "Social Media", title: "Discord Moderation", sub: "Server Management", bg: 1 },
+  { type: "Content", title: "Social Media Design", sub: "X & Twitter Campaigns", bg: 2 },
+  { type: "Strategy", title: "Community Growth", sub: "10K+ Members Onboarded", bg: 3 },
 ];
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="relative py-32 px-6">
-      {/* Ambient glow */}
-      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] rounded-full bg-neon-blue/3 cinematic-blur" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16"
-        >
-          <h2 className="font-[var(--font-orbitron)] text-3xl md:text-4xl font-bold text-chrome tracking-wider mb-4">
-            Portfolio
-          </h2>
-          <div className="w-24 h-[2px] gradient-line mb-4" />
-          <p className="text-silver-dark text-base max-w-lg">
-            AI video, branding, community campaigns, and ambassador work
-          </p>
-        </motion.div>
-
-        {/* Portfolio grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item, index) => (
-            <motion.a
-              key={item.title}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="glass-card rounded-xl p-6 group cursor-pointer block"
-            >
-              {/* Tag */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full text-[10px] tracking-wider uppercase font-medium bg-neon-blue/10 text-neon-blue border border-neon-blue/20">
-                  {item.tag}
-                </span>
-                <ExternalLink className="w-4 h-4 text-silver-dark group-hover:text-neon-blue transition-colors" />
-              </div>
-
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-4 text-silver group-hover:text-neon-blue group-hover:border-neon-blue/30 transition-all duration-300">
-                {item.icon}
-              </div>
-
-              {/* Content */}
-              <h3 className="text-white font-semibold text-base mb-1">
-                {item.title}
-              </h3>
-              <p className="text-silver-dark text-xs uppercase tracking-wider mb-3">
-                {item.category}
-              </p>
-              <p className="text-silver-dark text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </motion.a>
-          ))}
+    <section id="portfolio" className="py-[100px] px-6 md:px-12 bg-black">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
+          04 — Portfolio
         </div>
+        <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-[60px]">
+          Selected Work
+        </h2>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px]">
+        {portfolioItems.map((item, i) => (
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            className="group relative aspect-[16/10] bg-[var(--glass)] border border-[var(--glass-border)] overflow-hidden cursor-pointer transition-colors duration-300 hover:border-[rgba(74,158,255,0.3)]"
+          >
+            {/* Background */}
+            <div className={`absolute inset-0 transition-transform duration-500 group-hover:scale-105 ${
+              item.bg === 1 ? "bg-gradient-to-br from-[#0a1628] via-[#050d1a] to-[#020810]" :
+              item.bg === 2 ? "bg-gradient-to-br from-[#080f20] via-[#040c1a] to-[#020810]" :
+              "bg-gradient-to-br from-[#060e1e] via-[#040a16] to-[#020810]"
+            }`}>
+              {/* Visual element */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[120px] h-[120px] rounded-full border border-[rgba(74,158,255,0.15)] animate-[spin_20s_linear_infinite]" />
+                <div className="absolute w-[80px] h-[80px] rounded-full border border-[rgba(74,158,255,0.25)] animate-[spin_12s_linear_infinite_reverse]" />
+              </div>
+            </div>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+              <div className="font-[var(--font-michroma)] text-[9px] tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-2">
+                {item.type}
+              </div>
+              <div className="font-[var(--font-michroma)] text-[15px] text-chrome tracking-[0.05em] mb-1">
+                {item.title}
+              </div>
+              <div className="text-[12px] text-muted tracking-[0.1em]">
+                {item.sub}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

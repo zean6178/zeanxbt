@@ -1,98 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Shield,
-  Users,
-  Megaphone,
-  Video,
-  Palette,
-  Globe,
-  MessageCircle,
-} from "lucide-react";
 
 const skills = [
-  {
-    icon: <Shield className="w-5 h-5" />,
-    title: "Discord Moderation",
-    description: "Managing communities, enforcing rules, and maintaining healthy discussions",
-  },
-  {
-    icon: <MessageCircle className="w-5 h-5" />,
-    title: "Telegram Management",
-    description: "Growing and engaging Telegram communities with strategic activities",
-  },
-  {
-    icon: <Users className="w-5 h-5" />,
-    title: "Community Growth",
-    description: "Scaling communities from zero to thousands with proven strategies",
-  },
-  {
-    icon: <Video className="w-5 h-5" />,
-    title: "AI Video Editing",
-    description: "Creating cinematic AI-generated content and short films",
-  },
-  {
-    icon: <Palette className="w-5 h-5" />,
-    title: "Midjourney / AI Tools",
-    description: "Leveraging AI tools for branding, design, and visual storytelling",
-  },
-  {
-    icon: <Globe className="w-5 h-5" />,
-    title: "Web3 Marketing",
-    description: "Campaign planning, ambassador programs, and ecosystem growth",
-  },
-  {
-    icon: <Megaphone className="w-5 h-5" />,
-    title: "Content Creation",
-    description: "Thread writing, graphic design, and campaign content for Web3",
-  },
+  "Discord Moderation",
+  "Telegram Management",
+  "Community Growth",
+  "AI Video Editing",
+  "Midjourney / AI Tools",
+  "Web3 Marketing",
+  "Content Creation",
+  "X / Twitter Growth",
+  "Ambassador Programs",
+  "Brand Identity Design",
+  "Event Coordination",
+  "Alpha Research",
 ];
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="relative py-32 px-6">
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-neon-blue/3 cinematic-blur" />
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16"
-        >
-          <h2 className="font-[var(--font-orbitron)] text-3xl md:text-4xl font-bold text-chrome tracking-wider mb-4">
-            Skills & Expertise
-          </h2>
-          <div className="w-24 h-[2px] gradient-line" />
-        </motion.div>
-
-        {/* Skills grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.08 * index }}
-              className="glass-card rounded-xl p-6 group"
-            >
-              <div className="w-12 h-12 rounded-lg bg-neon-blue/10 border border-neon-blue/20 flex items-center justify-center mb-4 text-neon-blue group-hover:bg-neon-blue/20 group-hover:border-neon-blue/40 transition-all duration-300">
-                {skill.icon}
-              </div>
-              <h3 className="text-white font-semibold text-sm tracking-wider uppercase mb-2">
-                {skill.title}
-              </h3>
-              <p className="text-silver-dark text-sm leading-relaxed">
-                {skill.description}
-              </p>
-            </motion.div>
-          ))}
+    <section id="skills" className="py-[100px] px-6 md:px-12 bg-gradient-to-b from-black via-[#020508] to-black">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
+          03 — Skills
         </div>
+        <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-[60px]">
+          Core Capabilities
+        </h2>
+      </motion.div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[2px] max-w-[1200px]">
+        {skills.map((skill, i) => (
+          <motion.div
+            key={skill}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+            className="skill-bar relative p-5 bg-[var(--glass)] border border-[var(--glass-border)] flex items-center gap-3.5 transition-all duration-300 overflow-hidden hover:border-[rgba(74,158,255,0.2)]"
+          >
+            <div className="w-1.5 h-1.5 bg-[var(--blue-glow)] rounded-full shadow-[0_0_8px_var(--blue-glow)] shrink-0" />
+            <div className="font-[var(--font-rajdhani)] text-[13px] font-semibold tracking-[0.15em] uppercase text-[var(--silver)]">
+              {skill}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
