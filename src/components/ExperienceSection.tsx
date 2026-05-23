@@ -37,12 +37,13 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-[100px] px-6 md:px-12 bg-black">
+    <section id="experience" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-black">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
+        className="max-w-[1200px] mx-auto"
       >
         <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
           02 — Experience
@@ -52,7 +53,7 @@ export default function ExperienceSection() {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px] mx-auto">
         {experiences.map((exp, i) => (
           <motion.div
             key={exp.num}

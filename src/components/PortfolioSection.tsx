@@ -13,12 +13,13 @@ const portfolioItems = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-[100px] px-6 md:px-12 bg-black">
+    <section id="portfolio" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-black">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
+        className="max-w-[1200px] mx-auto"
       >
         <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
           04 — Portfolio
@@ -28,7 +29,7 @@ export default function PortfolioSection() {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px] mx-auto">
         {portfolioItems.map((item, i) => (
           <motion.div
             key={item.title}

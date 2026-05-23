@@ -38,7 +38,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 md:px-12 pt-[100px] max-w-[700px]">
+      <div className="relative z-10 px-6 md:px-12 lg:px-[48px] pt-[120px] md:pt-[100px] max-w-[700px]">
         {/* Tag */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

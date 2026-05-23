@@ -19,12 +19,13 @@ const skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-[100px] px-6 md:px-12 bg-gradient-to-b from-black via-[#020508] to-black">
+    <section id="skills" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
+        className="max-w-[1200px] mx-auto"
       >
         <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
           03 — Skills
@@ -34,7 +35,7 @@ export default function SkillsSection() {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[2px] max-w-[1200px]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[2px] max-w-[1200px] mx-auto">
         {skills.map((skill, i) => (
           <motion.div
             key={skill}

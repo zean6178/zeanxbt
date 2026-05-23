@@ -11,8 +11,8 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-[100px] px-6 md:px-12 bg-gradient-to-b from-black via-[#020508] to-black">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-[1200px]">
+    <section id="about" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-[1200px] mx-auto">
         {/* Left - Text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
