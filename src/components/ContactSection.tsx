@@ -11,8 +11,8 @@ const contactLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-[clamp(100px,12vw,160px)] px-6 md:px-12 lg:px-16 xl:px-24 bg-gradient-to-b from-black via-[#020508] to-black text-center">
-      <div className="max-w-[700px] mx-auto">
+    <section id="contact" className="py-[clamp(100px,12vw,160px)] bg-gradient-to-b from-black via-[#020508] to-black">
+      <div className="w-[min(1400px,92%)] mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="flex justify-center gap-4 mb-20 flex-wrap"
+          className="flex justify-center gap-4 flex-wrap"
         >
           {contactLinks.map((link) => (
             <a

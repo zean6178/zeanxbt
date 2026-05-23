@@ -14,37 +14,39 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[500] px-6 md:px-12 lg:px-16 py-7 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent backdrop-blur-[2px]">
-      <a href="#" className="font-[var(--font-michroma)] text-[16px] tracking-[0.12em] text-metallic">
-        zXBT
-      </a>
+    <nav className="fixed top-0 left-0 right-0 z-[500] bg-gradient-to-b from-black/90 to-transparent backdrop-blur-[2px]">
+      <div className="w-[min(1400px,92%)] mx-auto py-7 flex items-center justify-between">
+        <a href="#" className="font-[var(--font-michroma)] text-[16px] tracking-[0.12em] text-metallic">
+          zXBT
+        </a>
 
-      <ul className="hidden md:flex gap-10 list-none">
-        {navLinks.map((link) => (
-          <li key={link.href}>
-            <a
-              href={link.href}
-              className="nav-underline relative font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.15em] uppercase text-[rgba(200,212,224,0.5)] no-underline transition-colors duration-300 hover:text-chrome"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        <ul className="hidden md:flex gap-10 list-none">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="nav-underline relative font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.15em] uppercase text-[rgba(200,212,224,0.5)] no-underline transition-colors duration-300 hover:text-chrome"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <button
-        onClick={() => setMobileOpen(!mobileOpen)}
-        className="md:hidden flex flex-col gap-1.5 p-2"
-        aria-label="Toggle menu"
-      >
-        <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
-        <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-        <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
-      </button>
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle menu"
+        >
+          <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
+          <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`w-5 h-[1px] bg-[var(--silver)] transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
+        </button>
+      </div>
 
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-t border-[rgba(200,212,224,0.04)] px-6 py-8 md:hidden">
-          <div className="flex flex-col gap-5">
+        <div className="bg-black/95 backdrop-blur-md border-t border-[rgba(200,212,224,0.04)] md:hidden">
+          <div className="w-[min(1400px,92%)] mx-auto py-8 flex flex-col gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.href}

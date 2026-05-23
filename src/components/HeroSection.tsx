@@ -7,15 +7,12 @@ export default function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_60%_40%,rgba(30,70,140,0.12)_0%,transparent_60%),radial-gradient(ellipse_40%_40%_at_70%_35%,rgba(74,158,255,0.06)_0%,transparent_50%),linear-gradient(180deg,#000_0%,#020408_50%,#000_100%)]" />
-
-      {/* Animated grid - subtle */}
       <div className="hero-grid" />
 
-      {/* Content - Two Column */}
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-16 xl:px-24 pt-[160px] md:pt-[140px] pb-[100px] max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-16 lg:gap-12 items-center">
-        {/* Left - Text Content */}
-        <div className="max-w-[600px]">
-          {/* Tag */}
+      {/* Content */}
+      <div className="relative z-10 w-[min(1400px,92%)] mx-auto pt-[160px] md:pt-[140px] pb-[100px] grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-16 lg:gap-12 items-center">
+        {/* Left */}
+        <div className="max-w-[580px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -25,7 +22,6 @@ export default function HeroSection() {
             // VERSION 2.0 &nbsp;&nbsp; ONLINE
           </motion.div>
 
-          {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +34,6 @@ export default function HeroSection() {
             <span className="text-blue-gradient">XBT</span>
           </motion.h1>
 
-          {/* Tagline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,7 +45,6 @@ export default function HeroSection() {
             <span className="text-[var(--blue-glow)]">FUTURE</span>
           </motion.div>
 
-          {/* Roles */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +59,6 @@ export default function HeroSection() {
             ))}
           </motion.div>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,65 +80,58 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right - Holographic Data Panel */}
+        {/* Right - Data Panel */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="hidden lg:flex items-center justify-center relative"
         >
-          <div className="relative w-full max-w-[420px] aspect-square">
-            {/* Orbiting rings */}
+          <div className="relative w-full max-w-[400px] aspect-square mx-auto">
             <div className="absolute inset-0 rounded-full border border-[rgba(74,158,255,0.08)] animate-[spin_40s_linear_infinite]" />
             <div className="absolute inset-[8%] rounded-full border border-[rgba(74,158,255,0.12)] animate-[spin_25s_linear_infinite_reverse]" />
             <div className="absolute inset-[16%] rounded-full border border-[rgba(74,158,255,0.06)] animate-[spin_18s_linear_infinite]" />
 
-            {/* Center panel */}
-            <div className="absolute inset-[22%] rounded-xl bg-[rgba(2,4,8,0.8)] border border-[rgba(74,158,255,0.12)] backdrop-blur-md flex flex-col justify-center px-8 py-7 overflow-hidden">
-              {/* Panel header */}
+            <div className="absolute inset-[22%] rounded-xl bg-[rgba(2,4,8,0.8)] border border-[rgba(74,158,255,0.12)] backdrop-blur-md flex flex-col justify-center px-8 py-7">
               <div className="flex items-center gap-2 mb-6 pb-4 border-b border-[rgba(74,158,255,0.08)]">
                 <div className="w-2 h-2 rounded-full bg-[var(--blue-glow)] shadow-[0_0_6px_var(--blue-glow)]" />
                 <span className="font-[var(--font-michroma)] text-[9px] tracking-[0.2em] text-[rgba(200,212,224,0.4)] uppercase">System Status</span>
-                <span className="ml-auto font-[var(--font-rajdhani)] text-[10px] font-semibold text-[#4ade80] tracking-wider">● LIVE</span>
+                <span className="ml-auto font-[var(--font-rajdhani)] text-[10px] font-semibold text-[#4ade80] tracking-wider">LIVE</span>
               </div>
-
-              {/* Data rows */}
-              <div className="space-y-5 flex-1 flex flex-col justify-center">
+              <div className="space-y-5">
                 {[
-                  { key: "projects", val: "50+", color: "text-[var(--blue-glow)]" },
-                  { key: "community", val: "10K+", color: "text-[var(--blue-glow)]" },
-                  { key: "experience", val: "3 yrs", color: "text-[var(--blue-glow)]" },
-                  { key: "status", val: "BUILDING", color: "text-[#4ade80]" },
+                  { key: "projects", val: "50+" },
+                  { key: "community", val: "10K+" },
+                  { key: "experience", val: "3 yrs" },
+                  { key: "status", val: "BUILDING" },
                 ].map((item) => (
                   <div key={item.key} className="flex items-center justify-between">
                     <span className="text-[12px] tracking-[0.1em] text-[rgba(200,212,224,0.4)] font-[var(--font-rajdhani)] font-medium">{item.key}</span>
-                    <span className={`text-[14px] font-bold font-[var(--font-rajdhani)] ${item.color}`}>{item.val}</span>
+                    <span className={`text-[14px] font-bold font-[var(--font-rajdhani)] ${item.key === "status" ? "text-[#4ade80]" : "text-[var(--blue-glow)]"}`}>{item.val}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Corner accents */}
             <div className="absolute top-[12%] right-[15%] w-1.5 h-1.5 bg-[var(--blue-glow)] rounded-full shadow-[0_0_8px_var(--blue-glow)] animate-[pulse-shape_3s_ease_infinite]" />
             <div className="absolute bottom-[18%] left-[12%] w-1 h-1 bg-[var(--blue-glow)] rounded-full shadow-[0_0_6px_var(--blue-glow)] animate-[pulse-shape_4s_ease_infinite_1s]" />
-            <div className="absolute top-[55%] right-[8%] w-1 h-1 bg-[rgba(74,158,255,0.5)] rounded-full animate-[pulse-shape_5s_ease_infinite_2s]" />
           </div>
         </motion.div>
       </div>
 
-      {/* Status bar - bottom */}
+      {/* Status bar */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-8 left-6 md:left-12 lg:left-16 flex gap-12 items-center"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-12 items-center"
       >
         {[
           { label: "Focus", value: "SHARP" },
           { label: "Status", value: "BUILDING" },
           { label: "Mission", value: "FREEDOM" },
         ].map((item) => (
-          <div key={item.label} className="font-[var(--font-michroma)] text-[9px] tracking-[0.12em] text-[rgba(200,212,224,0.25)] uppercase">
+          <div key={item.label} className="font-[var(--font-michroma)] text-[9px] tracking-[0.12em] text-[rgba(200,212,224,0.25)] uppercase text-center">
             {item.label}
             <span className="block text-[var(--blue-glow)] text-[13px] font-[var(--font-rajdhani)] font-semibold mt-1">
               {item.value}

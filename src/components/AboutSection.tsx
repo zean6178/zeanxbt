@@ -11,26 +11,26 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-[clamp(100px,12vw,160px)] px-6 md:px-12 lg:px-16 xl:px-24 bg-gradient-to-b from-black via-[#020508] to-black">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-[1200px] mx-auto">
+    <section id="about" className="py-[clamp(100px,12vw,160px)] bg-gradient-to-b from-black via-[#020508] to-black">
+      <div className="w-[min(1400px,92%)] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left - Text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="max-w-[560px]"
         >
           <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.35em] text-[var(--blue-glow)] uppercase mb-6">
             01 — About
           </div>
-
           <h2 className="font-[var(--font-michroma)] text-[clamp(26px,3.5vw,44px)] font-normal tracking-[0.04em] leading-[1.15] text-chrome-gradient mb-10">
             Building Communities<br />Beyond Web2
           </h2>
-          <p className="text-[15px] leading-[2] text-[rgba(200,212,224,0.6)] font-normal mb-7">
+          <p className="text-[15px] leading-[2] text-[rgba(200,212,224,0.6)] font-normal mb-7 max-w-[520px]">
             I specialize in <strong className="text-chrome font-semibold">building and managing Web3 communities</strong> across Discord, Telegram, and X. Bridging the gap between cutting-edge technology and real human connection.
           </p>
-          <p className="text-[15px] leading-[2] text-[rgba(200,212,224,0.6)] font-normal">
+          <p className="text-[15px] leading-[2] text-[rgba(200,212,224,0.6)] font-normal max-w-[520px]">
             Experienced in <strong className="text-chrome font-semibold">moderation, ambassador programs, community growth, AI content creation,</strong> and Web3 branding. Focused on creating impact at the intersection of AI and decentralized ecosystems.
           </p>
         </motion.div>

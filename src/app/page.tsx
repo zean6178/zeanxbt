@@ -18,15 +18,10 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       <HeroSection />
-      <div className="h-divider" />
       <AboutSection />
-      <div className="h-divider" />
       <ExperienceSection />
-      <div className="h-divider" />
       <SkillsSection />
-      <div className="h-divider" />
       <PortfolioSection />
-      <div className="h-divider" />
       <ContactSection />
       <Footer />
     </main>
