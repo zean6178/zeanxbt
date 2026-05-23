@@ -1,88 +1,61 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+
+const stats = [
+  { num: "50", suffix: "+", label: "Projects Moderated" },
+  { num: "3", suffix: "yr", label: "Web3 Experience" },
+  { num: "10", suffix: "k+", label: "Community Members" },
+  { num: "∞", suffix: "", label: "Impact Created" },
+];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-32 px-6">
-      {/* Ambient glow */}
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-neon-blue/3 cinematic-blur" />
-
-      <div className="max-w-5xl mx-auto relative z-10">
-        {/* Section header */}
+    <section id="about" className="py-[100px] px-6 md:px-12 bg-gradient-to-b from-black via-[#020508] to-black">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-[1200px]">
+        {/* Left - Text */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-16"
+          transition={{ duration: 0.7 }}
         >
-          <h2 className="font-[var(--font-orbitron)] text-3xl md:text-4xl font-bold text-chrome tracking-wider mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-[2px] gradient-line mb-8" />
-
-          {/* Branding banner */}
-          <div className="relative w-full max-w-2xl h-32 md:h-40 rounded-xl overflow-hidden border border-white/10">
-            <Image
-              src="/branding-logo.jpg"
-              alt="ZEANXBT Branding"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
+            01 — About
           </div>
+          <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-[60px]">
+            Building Communities<br />Beyond Web2
+          </h2>
+          <p className="text-[17px] leading-[1.8] text-[rgba(200,212,224,0.7)] font-normal mb-6">
+            I specialize in <strong className="text-chrome font-semibold">building and managing Web3 communities</strong> across Discord, Telegram, and X. Bridging the gap between cutting-edge technology and real human connection.
+          </p>
+          <p className="text-[17px] leading-[1.8] text-[rgba(200,212,224,0.7)] font-normal">
+            Experienced in <strong className="text-chrome font-semibold">moderation, ambassador programs, community growth, AI content creation,</strong> and Web3 branding. Focused on creating impact at the intersection of AI and decentralized ecosystems.
+          </p>
         </motion.div>
 
-        {/* Bio content */}
+        {/* Right - Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card rounded-2xl p-8 md:p-12"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="grid grid-cols-2 gap-[2px]"
         >
-          <div className="space-y-6 text-center max-w-3xl mx-auto">
-            <p className="text-silver-light text-lg md:text-xl leading-relaxed">
-              I specialize in building and managing{" "}
-              <span className="text-neon-blue font-semibold">Web3 communities</span>{" "}
-              across Discord, Telegram, and X.
-            </p>
-            <p className="text-silver text-base md:text-lg leading-relaxed">
-              Experienced in moderation, ambassador programs, community growth,{" "}
-              <span className="text-white font-medium">AI content creation</span>, and Web3 branding.
-            </p>
-            <p className="text-silver-dark text-base leading-relaxed">
-              With over 3 years of full-time experience, I&apos;ve contributed to growing communities from zero to thousands of members, led campaigns reaching 100K+ participants, and served as Web3 Community Crew at Coinfest Asia 2024 in Bali.
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {[
-              { value: "3+", label: "Years in Web3" },
-              { value: "5M+", label: "User Growth" },
-              { value: "100K+", label: "Campaign Reach" },
-              { value: "7K+", label: "Community Built" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                className="text-center p-4"
-              >
-                <div className="font-[var(--font-orbitron)] text-2xl md:text-3xl font-bold text-neon-blue text-glow mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-silver-dark text-xs tracking-wider uppercase">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="stat-line relative p-7 bg-[var(--glass)] border border-[var(--glass-border)] overflow-hidden transition-colors duration-300 hover:border-[rgba(74,158,255,0.2)]"
+            >
+              <div className="font-[var(--font-michroma)] text-[36px] text-chrome leading-none mb-2">
+                {stat.num}
+                {stat.suffix && <span className="text-[var(--blue-glow)] text-[20px]">{stat.suffix}</span>}
+              </div>
+              <div className="text-[11px] tracking-[0.2em] uppercase text-muted">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
