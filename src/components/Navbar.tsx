@@ -14,7 +14,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[500] px-6 md:px-12 py-5 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent backdrop-blur-[2px]">
+    <nav className="fixed top-0 left-0 right-0 z-[500] px-6 md:px-12 py-6 md:py-7 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent backdrop-blur-[2px]">
       <a href="#" className="font-[var(--font-michroma)] text-[18px] tracking-[0.15em] text-metallic">
         zXBT
       </a>
@@ -25,7 +25,7 @@ export default function Navbar() {
           <li key={link.href}>
             <a
               href={link.href}
-              className="nav-underline relative font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.25em] uppercase text-muted no-underline transition-colors duration-300 hover:text-chrome"
+              className="nav-underline relative font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.18em] uppercase text-muted no-underline transition-colors duration-300 hover:text-chrome"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.25em] uppercase text-muted hover:text-chrome transition-colors py-2"
+                className="font-[var(--font-rajdhani)] text-[12px] font-medium tracking-[0.18em] uppercase text-muted hover:text-chrome transition-colors py-2"
               >
                 {link.label}
               </a>

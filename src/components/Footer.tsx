@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="font-[var(--font-michroma)] text-[14px] tracking-[0.15em] text-metallic">
         zeanXBT
       </div>
-      <div className="text-[11px] tracking-[0.2em] text-[rgba(200,212,224,0.2)] uppercase">
+      <div className="text-[11px] tracking-[0.15em] text-[rgba(200,212,224,0.2)] uppercase">
         &copy; 2025 zeanXBT — All rights reserved
       </div>
-      <div className="font-[var(--font-michroma)] text-[9px] tracking-[0.3em] text-[rgba(74,158,255,0.4)] uppercase">
+      <div className="font-[var(--font-michroma)] text-[9px] tracking-[0.2em] text-[rgba(74,158,255,0.4)] uppercase">
         AI × WEB3 × FUTURE
       </div>
     </footer>
