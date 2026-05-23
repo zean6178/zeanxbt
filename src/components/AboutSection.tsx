@@ -2,17 +2,13 @@
 
 import { motion } from "framer-motion";
 
-const skills = [
-  { label: "COMMUNITY BUILDING", description: "Building and growing engaged Web3 communities from the ground up" },
-  { label: "MODERATION", description: "Maintaining healthy community standards and resolving issues" },
-  { label: "AMBASSADOR", description: "Representing and advocating for Web3 protocols and ecosystems" },
-  { label: "ENGAGEMENT", description: "Fostering active participation and supportive community culture" },
-];
-
 export default function AboutSection() {
   return (
     <section id="about" className="relative py-32 px-6">
-      <div className="max-w-4xl mx-auto">
+      {/* Ambient glow */}
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-neon-blue/3 cinematic-blur" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,51 +17,61 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="font-[var(--font-orbitron)] text-3xl md:text-4xl font-bold text-chrome tracking-wider mb-4">
             About Me
           </h2>
-          <div className="w-20 h-[1px] gradient-line" />
+          <div className="w-24 h-[2px] gradient-line" />
         </motion.div>
 
-        {/* Bio */}
+        {/* Bio content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center text-center mb-16"
+          className="glass-card rounded-2xl p-8 md:p-12"
         >
-          <div className="text-[#c0c0c8] text-lg leading-relaxed max-w-2xl space-y-4">
-            <p>
-              I&apos;m <span className="text-white font-semibold">ZeanDarren</span>, widely known in the Web3 space. With a background as a Community Builder, I have over <span className="text-white font-semibold">3 years of experience</span> as a full-time Web3 Moderator and Ambassador.
+          <div className="space-y-6 text-center max-w-3xl mx-auto">
+            <p className="text-silver-light text-lg md:text-xl leading-relaxed">
+              I specialize in building and managing{" "}
+              <span className="text-neon-blue font-semibold">Web3 communities</span>{" "}
+              across Discord, Telegram, and X.
             </p>
-            <p>
-              I also contributed as a <span className="text-white font-semibold">Web3 Community Crew at Coinfest Asia 2024</span> in Bali.
+            <p className="text-silver text-base md:text-lg leading-relaxed">
+              Experienced in moderation, ambassador programs, community growth,{" "}
+              <span className="text-white font-medium">AI content creation</span>, and Web3 branding.
             </p>
-            <p>
-              My expertise lies in community building and moderation, where I focus on engaging users, resolving community issues, and fostering a supportive and active Web3 community.
+            <p className="text-silver-dark text-base leading-relaxed">
+              With over 3 years of full-time experience, I&apos;ve contributed to growing communities from zero to thousands of members, led campaigns reaching 100K+ participants, and served as Web3 Community Crew at Coinfest Asia 2024 in Bali.
             </p>
           </div>
-        </motion.div>
 
-        {/* Skills grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-          {skills.map((item, index) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="p-6 rounded-xl border border-white/5 bg-[#12121a]/50 card-hover"
-            >
-              <h3 className="text-white font-semibold tracking-wider text-sm mb-2">
-                {item.label}
-              </h3>
-              <p className="text-[#8a8a96] text-sm">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            {[
+              { value: "3+", label: "Years in Web3" },
+              { value: "5M+", label: "User Growth" },
+              { value: "100K+", label: "Campaign Reach" },
+              { value: "7K+", label: "Community Built" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                className="text-center p-4"
+              >
+                <div className="font-[var(--font-orbitron)] text-2xl md:text-3xl font-bold text-neon-blue text-glow mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-silver-dark text-xs tracking-wider uppercase">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
