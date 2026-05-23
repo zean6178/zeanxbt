@@ -2,14 +2,14 @@
 
 export default function Footer() {
   return (
-    <footer className="px-6 md:px-12 py-8 border-t border-[var(--glass-border)] flex flex-col md:flex-row items-center justify-between gap-3">
-      <div className="font-[var(--font-michroma)] text-[14px] tracking-[0.15em] text-metallic">
+    <footer className="px-6 md:px-12 lg:px-16 py-10 border-t border-[rgba(200,212,224,0.04)] flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="font-[var(--font-michroma)] text-[14px] tracking-[0.12em] text-metallic">
         zeanXBT
       </div>
-      <div className="text-[11px] tracking-[0.15em] text-[rgba(200,212,224,0.2)] uppercase">
+      <div className="text-[11px] tracking-[0.1em] text-[rgba(200,212,224,0.2)] uppercase">
         &copy; 2025 zeanXBT — All rights reserved
       </div>
-      <div className="font-[var(--font-michroma)] text-[9px] tracking-[0.2em] text-[rgba(74,158,255,0.4)] uppercase">
+      <div className="font-[var(--font-michroma)] text-[9px] tracking-[0.15em] text-[rgba(74,158,255,0.35)] uppercase">
         AI × WEB3 × FUTURE
       </div>
     </footer>

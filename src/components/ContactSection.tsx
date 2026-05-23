@@ -11,39 +11,38 @@ const contactLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-[clamp(80px,10vw,140px)] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black text-center">
+    <section id="contact" className="py-[clamp(100px,12vw,160px)] px-6 md:px-12 lg:px-16 xl:px-24 bg-gradient-to-b from-black via-[#020508] to-black text-center">
       <div className="max-w-[700px] mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="section-label-line flex items-center justify-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-5">
+          <div className="section-label-line flex items-center justify-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.35em] text-[var(--blue-glow)] uppercase mb-6">
             05 — Contact
           </div>
-          <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-10 text-center">
+          <h2 className="font-[var(--font-michroma)] text-[clamp(26px,3.5vw,44px)] font-normal tracking-[0.04em] leading-[1.15] text-chrome-gradient mb-8">
             Let&apos;s Build<br />The Future
           </h2>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-[var(--font-michroma)] text-[clamp(12px,2vw,18px)] tracking-[0.1em] text-chrome opacity-60 mb-12"
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="font-[var(--font-michroma)] text-[clamp(12px,2vw,16px)] tracking-[0.1em] text-chrome opacity-50 mb-14"
         >
           // Available for Web3 & AI collaborations
         </motion.div>
 
-        {/* Links */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex justify-center gap-[2px] mb-20 flex-wrap"
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="flex justify-center gap-4 mb-20 flex-wrap"
         >
           {contactLinks.map((link) => (
             <a
@@ -51,25 +50,11 @@ export default function ContactSection() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 font-[var(--font-rajdhani)] text-[12px] font-bold tracking-[0.2em] uppercase text-muted no-underline bg-[var(--glass)] border border-[var(--glass-border)] transition-all duration-300 flex items-center gap-2 hover:text-chrome hover:border-[rgba(74,158,255,0.3)] hover:bg-[rgba(74,158,255,0.04)]"
+              className="px-7 py-4 font-[var(--font-rajdhani)] text-[12px] font-bold tracking-[0.15em] uppercase text-[rgba(200,212,224,0.5)] no-underline bg-[rgba(255,255,255,0.02)] border border-[rgba(200,212,224,0.04)] rounded-sm transition-all duration-300 flex items-center gap-2.5 hover:text-chrome hover:border-[rgba(74,158,255,0.2)] hover:bg-[rgba(74,158,255,0.03)]"
             >
-              <span className="text-[14px]">{link.icon}</span> {link.label}
+              <span className="text-[14px] opacity-60">{link.icon}</span> {link.label}
             </a>
           ))}
-        </motion.div>
-
-        {/* Values */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex justify-center gap-8 opacity-30 font-[var(--font-michroma)] text-[10px] tracking-[0.25em] uppercase flex-wrap"
-        >
-          <span>FOCUS</span>
-          <span>BUILD</span>
-          <span>FREEDOM</span>
-          <span>CREATE IMPACT</span>
         </motion.div>
       </div>
     </section>
