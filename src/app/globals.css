@@ -10,7 +10,7 @@
   --white: #ffffff;
   --muted: rgba(200,212,224,0.5);
   --glass: rgba(255,255,255,0.03);
-  --glass-border: rgba(200,212,224,0.08);
+  --glass-border: rgba(200,212,224,0.05);
 }
 
 @theme inline {
@@ -97,8 +97,8 @@ body::after {
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(74,158,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74,158,255,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(74,158,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74,158,255,0.03) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%);
   animation: gridMove 20s linear infinite;
@@ -187,7 +187,7 @@ body::after {
 /* HORIZONTAL DIVIDER */
 .h-divider {
   width: 100%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(74,158,255,0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74,158,255,0.08), transparent);
 }
 
 /* GLASS CARDS */
@@ -206,7 +206,7 @@ body::after {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--blue-glow), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74,158,255,0.5), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }

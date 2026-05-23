@@ -11,7 +11,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black">
+    <section id="about" className="py-[clamp(80px,10vw,140px)] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-[1200px] mx-auto">
         {/* Left - Text */}
         <motion.div
@@ -20,16 +20,16 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
+          <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-5">
             01 — About
           </div>
-          <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-[60px]">
+          <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-10">
             Building Communities<br />Beyond Web2
           </h2>
-          <p className="text-[17px] leading-[1.8] text-[rgba(200,212,224,0.7)] font-normal mb-6">
+          <p className="text-[16px] leading-[1.9] text-[rgba(200,212,224,0.7)] font-normal mb-7">
             I specialize in <strong className="text-chrome font-semibold">building and managing Web3 communities</strong> across Discord, Telegram, and X. Bridging the gap between cutting-edge technology and real human connection.
           </p>
-          <p className="text-[17px] leading-[1.8] text-[rgba(200,212,224,0.7)] font-normal">
+          <p className="text-[16px] leading-[1.9] text-[rgba(200,212,224,0.7)] font-normal">
             Experienced in <strong className="text-chrome font-semibold">moderation, ambassador programs, community growth, AI content creation,</strong> and Web3 branding. Focused on creating impact at the intersection of AI and decentralized ecosystems.
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ export default function AboutSection() {
                 {stat.num}
                 {stat.suffix && <span className="text-[var(--blue-glow)] text-[20px]">{stat.suffix}</span>}
               </div>
-              <div className="text-[11px] tracking-[0.2em] uppercase text-muted">
+              <div className="text-[11px] tracking-[0.15em] uppercase text-muted">
                 {stat.label}
               </div>
             </div>

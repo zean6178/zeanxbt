@@ -37,7 +37,7 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-[100px] px-6 md:px-12 lg:px-[48px] bg-black">
+    <section id="experience" className="py-[clamp(80px,10vw,140px)] px-6 md:px-12 lg:px-[48px] bg-black">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -45,15 +45,15 @@ export default function ExperienceSection() {
         transition={{ duration: 0.7 }}
         className="max-w-[1200px] mx-auto"
       >
-        <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.5em] text-[var(--blue-glow)] uppercase mb-4">
+        <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-5">
           02 — Experience
         </div>
-        <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-[60px]">
+        <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-12">
           What I Do
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px] max-w-[1200px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto">
         {experiences.map((exp, i) => (
           <motion.div
             key={exp.num}
@@ -61,19 +61,19 @@ export default function ExperienceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="clip-card relative p-9 bg-[var(--glass)] border border-[var(--glass-border)] overflow-hidden transition-all duration-400 hover:border-[rgba(74,158,255,0.25)] hover:-translate-y-1 group"
+            className="clip-card relative p-8 md:p-10 bg-[var(--glass)] border border-[var(--glass-border)] overflow-hidden transition-all duration-400 hover:border-[rgba(74,158,255,0.25)] hover:-translate-y-1 group"
           >
             {/* Hover glow */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(74,158,255,0.06)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
             <div className="relative z-10">
-              <div className="font-[var(--font-michroma)] text-[10px] tracking-[0.3em] text-[var(--blue-glow)] mb-5 opacity-70">
+              <div className="font-[var(--font-michroma)] text-[10px] tracking-[0.25em] text-[var(--blue-glow)] mb-6 opacity-70">
                 [ {exp.num} ]
               </div>
-              <div className="font-[var(--font-michroma)] text-[16px] text-chrome tracking-[0.05em] mb-3">
+              <div className="font-[var(--font-michroma)] text-[16px] text-chrome tracking-[0.05em] mb-4">
                 {exp.title}
               </div>
-              <div className="text-[14px] leading-[1.7] text-[rgba(200,212,224,0.55)] font-normal">
+              <div className="text-[14px] leading-[1.8] text-[rgba(200,212,224,0.55)] font-normal">
                 {exp.desc}
               </div>
             </div>
