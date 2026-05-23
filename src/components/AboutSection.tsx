@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -20,7 +21,18 @@ export default function AboutSection() {
           <h2 className="font-[var(--font-orbitron)] text-3xl md:text-4xl font-bold text-chrome tracking-wider mb-4">
             About Me
           </h2>
-          <div className="w-24 h-[2px] gradient-line" />
+          <div className="w-24 h-[2px] gradient-line mb-8" />
+
+          {/* Branding banner */}
+          <div className="relative w-full max-w-2xl h-32 md:h-40 rounded-xl overflow-hidden border border-white/10">
+            <Image
+              src="/branding-logo.jpg"
+              alt="ZEANXBT Branding"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
         </motion.div>
 
         {/* Bio content */}

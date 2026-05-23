@@ -1,12 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-banner.png"
+          alt="Futuristic cityscape"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+      </div>
+
       {/* Background grid */}
-      <div className="absolute inset-0 bg-grid opacity-50" />
+      <div className="absolute inset-0 bg-grid opacity-30" />
 
       {/* Cinematic ambient glow */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-neon-blue/5 cinematic-blur" />
@@ -18,11 +32,29 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="flex flex-col items-center text-center">
+          {/* Profile Avatar */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-6"
+          >
+            <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden glow-ring-strong border-2 border-neon-blue/30">
+              <Image
+                src="/profile-avatar.jpg"
+                alt="ZeanDarren"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+
           {/* Status badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs tracking-[0.2em] uppercase text-silver-dark">
@@ -35,7 +67,7 @@ export default function HeroSection() {
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="font-[var(--font-orbitron)] text-5xl sm:text-6xl md:text-8xl font-bold tracking-wider mb-6"
           >
             <span className="text-chrome">ZEAN</span>
@@ -46,7 +78,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap items-center justify-center gap-3 text-sm md:text-base text-silver-dark tracking-[0.3em] uppercase mb-8"
           >
             <span>AI</span>
@@ -60,7 +92,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-col gap-2 text-silver text-base md:text-lg mb-12 max-w-2xl"
           >
             <p>Full-time Web3 Moderator & Ambassador</p>
@@ -73,7 +105,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             className="flex flex-wrap items-center justify-center gap-4"
           >
             <a
