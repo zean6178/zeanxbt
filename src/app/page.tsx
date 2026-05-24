@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
+import RevealObserver from "@/components/RevealObserver";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <div className="h-divider" />
       <ContactSection />
       <Footer />
+      <RevealObserver />
     </main>
   );
 }

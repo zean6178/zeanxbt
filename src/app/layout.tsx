@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "zeanXBT — AI × Web3 × Future",
     description:
       "Full-time Web3 Moderator & Ambassador. AI Video Creator. Web3 Community Builder.",
-    creator: "@zeandrn",
+    creator: "@zeanxbt",
   },
 };
 
@@ -61,9 +61,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${rajdhani.variable} ${orbitron.variable} ${michroma.variable} h-full antialiased`}
+      className={`${rajdhani.variable} ${orbitron.variable} ${michroma.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         {children}
       </body>
     </html>

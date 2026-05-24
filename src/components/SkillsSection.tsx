@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const skills = [
   "Discord Moderation",
   "Telegram Management",
@@ -19,37 +17,15 @@ const skills = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-[clamp(80px,10vw,140px)] px-6 md:px-12 lg:px-[48px] bg-gradient-to-b from-black via-[#020508] to-black">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="max-w-[1200px] mx-auto"
-      >
-        <div className="section-label-line flex items-center gap-4 font-[var(--font-michroma)] text-[10px] tracking-[0.4em] text-[var(--blue-glow)] uppercase mb-5">
-          03 — Skills
-        </div>
-        <h2 className="font-[var(--font-michroma)] text-[clamp(28px,4vw,48px)] font-normal tracking-[0.05em] leading-[1.1] text-chrome-gradient mb-12">
-          Core Capabilities
-        </h2>
-      </motion.div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-[1200px] mx-auto">
-        {skills.map((skill, i) => (
-          <motion.div
-            key={skill}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
-            className="skill-bar relative py-6 px-6 min-h-[72px] bg-[var(--glass)] border border-[var(--glass-border)] flex items-center gap-3.5 transition-all duration-300 overflow-hidden hover:border-[rgba(74,158,255,0.2)]"
-          >
-            <div className="w-1.5 h-1.5 bg-[var(--blue-glow)] rounded-full shadow-[0_0_8px_var(--blue-glow)] shrink-0" />
-            <div className="font-[var(--font-rajdhani)] text-[13px] font-semibold tracking-[0.1em] uppercase text-[var(--silver)]">
-              {skill}
-            </div>
-          </motion.div>
+    <section id="skills">
+      <div className="section-label reveal">03 — Skills</div>
+      <h2 className="section-title reveal">Core Capabilities</h2>
+      <div className="skills-grid">
+        {skills.map((skill) => (
+          <div key={skill} className="skill-item reveal">
+            <div className="skill-dot"></div>
+            <div className="skill-name">{skill}</div>
+          </div>
         ))}
       </div>
     </section>
