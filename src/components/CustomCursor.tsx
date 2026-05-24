@@ -31,7 +31,6 @@ export default function CustomCursor() {
     document.addEventListener("mousemove", handleMouseMove);
     animateRing();
 
-    // Hover effects on interactive elements
     const handleEnter = () => {
       if (cursorRef.current) cursorRef.current.style.transform = "scale(2)";
       if (ringRef.current) {
@@ -64,8 +63,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={cursorRef} className="cursor hidden md:block" />
-      <div ref={ringRef} className="cursor-ring hidden md:block" />
+      <div ref={cursorRef} className="cursor" id="cursor"></div>
+      <div ref={ringRef} className="cursor-ring" id="cursor-ring"></div>
     </>
   );
 }
