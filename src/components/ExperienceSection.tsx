@@ -2,34 +2,24 @@
 
 const experiences = [
   {
-    icon: "[ 01 ]",
-    title: "Web3 Moderator",
-    desc: "Community moderation across Discord and Telegram. Enforcing rules, onboarding members, and maintaining healthy ecosystem dynamics for Web3 projects.",
+    icon: "2022 — PRESENT",
+    title: "Moderator · Manta Network",
+    desc: "Part of the Manta Indonesia Team. Grew the Manta Indonesia community from 0 to 7,000 members within one month, while helping achieve global user growth from thousands to 5 million.",
   },
   {
-    icon: "[ 02 ]",
-    title: "Community Manager",
-    desc: "Strategic community growth and engagement. Building loyal communities from the ground up, coordinating events, AMAs, and campaigns.",
+    icon: "2023 — 2025",
+    title: "Ambassador · Polyhedra Network",
+    desc: "Helped drive user growth on a global scale. Played an active role in expanding the Polyhedra ecosystem and representing the project to the broader Web3 community.",
   },
   {
-    icon: "[ 03 ]",
-    title: "Ambassador Programs",
-    desc: "Representing Web3 protocols as official ambassador. Brand advocacy, content creation, regional outreach, and ecosystem expansion.",
+    icon: "2024 — PRESENT",
+    title: "Moderator · StoryChain",
+    desc: "Led campaigns that attracted over 100,000 participants and drove more than 100% growth in new sign-ups on the Telegram Mini App. Managed community moderation and user engagement end-to-end.",
   },
   {
-    icon: "[ 04 ]",
-    title: "AI Video Creator",
-    desc: "Creating cinematic AI-powered video content for Web3 brands and personal branding. Leveraging cutting-edge AI tools to produce futuristic visuals.",
-  },
-  {
-    icon: "[ 05 ]",
-    title: "AI Branding Designer",
-    desc: "Crafting futuristic brand identities using Midjourney and AI tools. Chrome aesthetics, dark UI, cyberpunk visual identity design.",
-  },
-  {
-    icon: "[ 06 ]",
-    title: "Web3 Marketing",
-    desc: "Go-to-market strategies for crypto projects. X/Twitter campaigns, alpha sharing, KOL coordination, and community-driven growth hacking.",
+    icon: "2024 — PRESENT",
+    title: "Ambassador · Nesa & Privasea",
+    desc: "Helped introduce AI and FHE (Fully Homomorphic Encryption) technology to the community, while bridging clear communication between the core team and members.",
   },
 ];
 
@@ -37,7 +27,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience">
       <div className="section-label reveal">02 — Experience</div>
-      <h2 className="section-title reveal">What I Do</h2>
+      <h2 className="section-title reveal">Work Experience</h2>
       <div className="exp-grid">
         {experiences.map((exp) => (
           <div className="exp-card reveal" key={exp.title}>

@@ -1,25 +1,25 @@
 "use client";
 
 const skills = [
-  "Discord Moderation",
+  "Thread Writing",
+  "Graphic Design",
+  "Running Node",
+  "Campaign Planning",
+  "Event Hosting",
+  "Community Moderation",
+  "Discord Management",
   "Telegram Management",
+  "Ambassador Program",
+  "AMA Hosting",
   "Community Growth",
-  "AI Video Editing",
-  "Midjourney / AI Tools",
-  "Web3 Marketing",
-  "Content Creation",
-  "X / Twitter Growth",
-  "Ambassador Programs",
-  "Brand Identity Design",
-  "Event Coordination",
-  "Alpha Research",
+  "Web3 Ecosystem",
 ];
 
 export default function SkillsSection() {
   return (
     <section id="skills">
       <div className="section-label reveal">03 — Skills</div>
-      <h2 className="section-title reveal">Core Capabilities</h2>
+      <h2 className="section-title reveal">Skills &amp; Expertise</h2>
       <div className="skills-grid">
         {skills.map((skill) => (
           <div className="skill-item reveal" key={skill}>
