@@ -18,7 +18,7 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-content">
-        <div className="hero-tag">{"// VERSION 2.0 \u00A0\u00A0 ONLINE"}</div>
+        <div className="hero-tag">// VERSION 2.0 &nbsp;&nbsp; ONLINE</div>
 
         <h1 className="hero-name glitch" data-text="zeanXBT">
           <span className="z">z</span>
