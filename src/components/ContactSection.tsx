@@ -6,7 +6,7 @@ export default function ContactSection() {
       <div className="contact-inner">
         <div className="section-label reveal">05 — Contact</div>
         <h2 className="section-title reveal">Let&apos;s Build<br />The Future</h2>
-        <div className="contact-email reveal">// Available for Web3 &amp; AI collaborations</div>
+        <div className="contact-email reveal">// Open for moderation, ambassador &amp; community roles</div>
         <div className="contact-links reveal">
           <a href="https://t.me/zeanxbt" className="contact-link" target="_blank" rel="noopener noreferrer">
             <span className="contact-link-icon">&#9992;</span> Telegram
@@ -28,17 +28,18 @@ export default function ContactSection() {
             display: "flex",
             justifyContent: "center",
             gap: "32px",
-            opacity: 0.3,
+            opacity: 0.35,
             fontFamily: "'Michroma', sans-serif",
             fontSize: "10px",
             letterSpacing: "0.4em",
             textTransform: "uppercase" as const,
+            color: "#2a3d60",
           }}
         >
-          <span>FOCUS</span>
+          <span>MODERATE</span>
           <span>BUILD</span>
-          <span>FREEDOM</span>
-          <span>CREATE IMPACT</span>
+          <span>GROW</span>
+          <span>IMPACT</span>
         </div>
       </div>
     </section>

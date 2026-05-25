@@ -27,13 +27,13 @@ export default function HeroSection() {
         </h1>
 
         <div className="hero-tagline">
-          <span>AI</span> &times; <span>WEB3</span> &times; <span>FUTURE</span>
+          <span>AI Video</span> &times; <span>WEB3 AI Agent</span> &times; <span>Content Creator</span>
         </div>
 
         <div className="hero-roles">
-          <div className="hero-role">Web3 Moderator &amp; Ambassador</div>
-          <div className="hero-role">AI Video Creator</div>
-          <div className="hero-role">Web3 Community Builder</div>
+          <div className="hero-role">Full-time Web3 Moderator &amp; Ambassador</div>
+          <div className="hero-role">Community Builder &middot; 3+ Years</div>
+          <div className="hero-role">Web3 Community Crew &middot; Coinfest Asia 2024</div>
         </div>
 
         <div className="hero-cta">
