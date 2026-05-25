@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import PortfolioSection from "@/components/PortfolioSection";
+import ProofOfWorkSection from "@/components/ProofOfWorkSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -27,6 +28,8 @@ export default function Home() {
       <SkillsSection />
       <div className="h-divider" />
       <PortfolioSection />
+      <div className="h-divider" />
+      <ProofOfWorkSection />
       <div className="h-divider" />
       <ContactSection />
       <Footer />

@@ -678,6 +678,107 @@ section {
 @keyframes pulse { 0%,100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.1); } }
 
 
+/* PROOF OF WORK */
+#proofofwork {
+  background: #f0f2f8;
+}
+
+.pow-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.pow-card {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(100,140,220,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.pow-card:hover {
+  border-color: rgba(42,122,223,0.3);
+  box-shadow: 0 16px 48px rgba(42,122,223,0.1);
+  transform: translateY(-4px);
+}
+
+.pow-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #dde4f0;
+}
+
+.pow-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  display: block;
+}
+
+.pow-card:hover .pow-img-wrap img {
+  transform: scale(1.04);
+}
+
+.pow-info {
+  padding: 24px 28px;
+}
+
+.pow-tag {
+  font-family: var(--font-display), 'Michroma', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  color: var(--blue-glow);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pow-title {
+  font-family: var(--font-display), 'Michroma', sans-serif;
+  font-size: 15px;
+  color: #1a2e50;
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.pow-desc {
+  font-family: var(--font-sans), 'Rajdhani', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(30,50,90,0.6);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.pow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans), 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-glow);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(42,122,223,0.25);
+  transition: all 0.3s;
+}
+
+.pow-link:hover {
+  color: #1a55b0;
+  border-bottom-color: #1a55b0;
+  gap: 10px;
+}
+
+
 /* CONTACT */
 #contact {
   background: linear-gradient(180deg, #eef0f5 0%, #e8ecf5 80%, #eef0f5 100%);
@@ -890,6 +991,7 @@ footer {
   .about-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .about-text p { text-align: center; }
   .exp-grid { grid-template-columns: 1fr; }
+  .pow-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: 1fr; }
   .hero-status { gap: 24px; }
