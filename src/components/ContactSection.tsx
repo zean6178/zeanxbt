@@ -4,7 +4,7 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <div className="contact-inner">
-        <div className="section-label reveal">05 — Contact</div>
+        <div className="section-label reveal">06 — Contact</div>
         <h2 className="section-title reveal">Let&apos;s Build<br />The Future</h2>
         <div className="contact-email reveal">// Open for moderation, ambassador &amp; community roles</div>
         <div className="contact-links reveal">
