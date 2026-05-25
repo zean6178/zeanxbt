@@ -27,7 +27,7 @@ const michroma = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "zeanXBT — AI × Web3 × Future",
+  title: "zeanXBT — AI Video × Web3 × Content Creator",
   description:
     "Full-time Web3 Moderator & Ambassador. AI Video Creator. Web3 Community Builder.",
   keywords: [
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     "Ambassador",
   ],
   openGraph: {
-    title: "zeanXBT — AI × Web3 × Future",
+    title: "zeanXBT — AI Video × Web3 × Content Creator",
     description:
       "Full-time Web3 Moderator & Ambassador. AI Video Creator. Web3 Community Builder.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "zeanXBT — AI × Web3 × Future",
+    title: "zeanXBT — AI Video × Web3 × Content Creator",
     description:
       "Full-time Web3 Moderator & Ambassador. AI Video Creator. Web3 Community Builder.",
     creator: "@zeanxbt",

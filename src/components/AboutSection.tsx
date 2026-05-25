@@ -7,8 +7,16 @@ export default function AboutSection() {
         <div className="about-text reveal">
           <div className="section-label">01 — About</div>
           <h2 className="section-title">Building Communities<br />Beyond Web2</h2>
-          <p>I specialize in <strong>building and managing Web3 communities</strong> across Discord, Telegram, and X. Bridging the gap between cutting-edge technology and real human connection.</p>
-          <p>Experienced in <strong>moderation, ambassador programs, community growth, AI content creation,</strong> and Web3 branding. Focused on creating impact at the intersection of AI and decentralized ecosystems.</p>
+          <p>
+            I specialize in <strong>building and managing Web3 communities</strong> across
+            Discord, Telegram, and X. Bridging the gap between cutting-edge technology and
+            real human connection.
+          </p>
+          <p>
+            Experienced in <strong>moderation, ambassador programs, community growth, AI
+            content creation,</strong> and Web3 branding. Focused on creating impact at the
+            intersection of AI and decentralized ecosystems.
+          </p>
         </div>
         <div className="about-stats reveal">
           <div className="stat-card">

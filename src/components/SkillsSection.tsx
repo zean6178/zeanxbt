@@ -22,7 +22,7 @@ export default function SkillsSection() {
       <h2 className="section-title reveal">Core Capabilities</h2>
       <div className="skills-grid">
         {skills.map((skill) => (
-          <div key={skill} className="skill-item reveal">
+          <div className="skill-item reveal" key={skill}>
             <div className="skill-dot"></div>
             <div className="skill-name">{skill}</div>
           </div>

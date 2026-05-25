@@ -21,19 +21,20 @@ export default function PortfolioSection() {
             <div className="portfolio-sub">Web3 Brand Visuals</div>
           </div>
         </div>
+
         {/* Card 2 */}
         <div className="portfolio-card reveal">
           <div className="portfolio-bg portfolio-bg-2">
             <div className="p-visual">
               <svg width="100" height="100" viewBox="0 0 100 100" fill="none" style={{ opacity: 0.2 }}>
-                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="#4a9eff" strokeWidth="0.5"/>
-                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="50" y1="5" x2="50" y2="20" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="95" y1="27.5" x2="80" y2="35" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="95" y1="72.5" x2="80" y2="65" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="50" y1="95" x2="50" y2="80" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="5" y1="72.5" x2="20" y2="65" stroke="#4a9eff" strokeWidth="0.5"/>
-                <line x1="5" y1="27.5" x2="20" y2="35" stroke="#4a9eff" strokeWidth="0.5"/>
+                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="#4a9eff" strokeWidth="0.5" />
+                <polygon points="50,20 80,35 80,65 50,80 20,65 20,35" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="50" y1="5" x2="50" y2="20" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="95" y1="27.5" x2="80" y2="35" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="95" y1="72.5" x2="80" y2="65" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="50" y1="95" x2="50" y2="80" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="5" y1="72.5" x2="20" y2="65" stroke="#4a9eff" strokeWidth="0.5" />
+                <line x1="5" y1="27.5" x2="20" y2="35" stroke="#4a9eff" strokeWidth="0.5" />
               </svg>
             </div>
           </div>
@@ -43,14 +44,15 @@ export default function PortfolioSection() {
             <div className="portfolio-sub">Logo &amp; Brand System</div>
           </div>
         </div>
+
         {/* Card 3 */}
         <div className="portfolio-card reveal">
           <div className="portfolio-bg portfolio-bg-3">
             <div className="p-visual">
               <svg width="120" height="60" viewBox="0 0 120 60" fill="none" style={{ opacity: 0.2 }}>
-                <path d="M0 30 Q30 5 60 30 Q90 55 120 30" stroke="#4a9eff" strokeWidth="0.8" fill="none"/>
-                <path d="M0 30 Q30 55 60 30 Q90 5 120 30" stroke="#4a9eff" strokeWidth="0.4" fill="none" opacity="0.5"/>
-                <circle cx="60" cy="30" r="8" stroke="#4a9eff" strokeWidth="0.5" fill="none"/>
+                <path d="M0 30 Q30 5 60 30 Q90 55 120 30" stroke="#4a9eff" strokeWidth="0.8" fill="none" />
+                <path d="M0 30 Q30 55 60 30 Q90 5 120 30" stroke="#4a9eff" strokeWidth="0.4" fill="none" opacity="0.5" />
+                <circle cx="60" cy="30" r="8" stroke="#4a9eff" strokeWidth="0.5" fill="none" />
               </svg>
             </div>
           </div>
@@ -60,10 +62,11 @@ export default function PortfolioSection() {
             <div className="portfolio-sub">Growth &amp; Outreach</div>
           </div>
         </div>
+
         {/* Card 4 */}
         <div className="portfolio-card reveal">
           <div className="portfolio-bg portfolio-bg-1">
-            <div className="p-visual" style={{ fontFamily: "var(--font-display), Michroma, sans-serif", fontSize: "36px", color: "rgba(74,158,255,0.15)", letterSpacing: "0.1em" }}>
+            <div className="p-visual" style={{ fontFamily: "Michroma, sans-serif", fontSize: "36px", color: "rgba(74,158,255,0.15)", letterSpacing: "0.1em" }}>
               DM
             </div>
           </div>
@@ -73,6 +76,7 @@ export default function PortfolioSection() {
             <div className="portfolio-sub">Server Management</div>
           </div>
         </div>
+
         {/* Card 5 */}
         <div className="portfolio-card reveal">
           <div className="portfolio-bg portfolio-bg-2">
@@ -95,10 +99,11 @@ export default function PortfolioSection() {
             <div className="portfolio-sub">X &amp; Twitter Campaigns</div>
           </div>
         </div>
+
         {/* Card 6 */}
         <div className="portfolio-card reveal">
           <div className="portfolio-bg portfolio-bg-3">
-            <div className="p-visual" style={{ fontFamily: "var(--font-display), Michroma, sans-serif", fontSize: "11px", color: "rgba(74,158,255,0.25)", letterSpacing: "0.2em", textAlign: "center", lineHeight: 2 }}>
+            <div className="p-visual" style={{ fontFamily: "Michroma, sans-serif", fontSize: "11px", color: "rgba(74,158,255,0.25)", letterSpacing: "0.2em", textAlign: "center", lineHeight: "2" }}>
               FOCUS<br />BUILD<br />FREEDOM<br />CREATE IMPACT
             </div>
           </div>

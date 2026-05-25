@@ -7,64 +7,62 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let mx = 0, my = 0, rx = 0, ry = 0;
+    const cursor = cursorRef.current;
+    const ring = ringRef.current;
+    if (!cursor || !ring) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    let animId: number;
+
+    const onMove = (e: MouseEvent) => {
       mx = e.clientX;
       my = e.clientY;
-      if (cursorRef.current) {
-        cursorRef.current.style.left = mx - 4 + "px";
-        cursorRef.current.style.top = my - 4 + "px";
-      }
+      cursor.style.left = mx - 4 + "px";
+      cursor.style.top = my - 4 + "px";
     };
 
     const animateRing = () => {
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
-      if (ringRef.current) {
-        ringRef.current.style.left = rx - 16 + "px";
-        ringRef.current.style.top = ry - 16 + "px";
-      }
-      requestAnimationFrame(animateRing);
+      ring.style.left = rx - 16 + "px";
+      ring.style.top = ry - 16 + "px";
+      animId = requestAnimationFrame(animateRing);
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    animateRing();
-
-    const handleEnter = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = "scale(2)";
-      if (ringRef.current) {
-        ringRef.current.style.transform = "scale(1.5)";
-        ringRef.current.style.borderColor = "rgba(74,158,255,0.8)";
-      }
-    };
-    const handleLeave = () => {
-      if (cursorRef.current) cursorRef.current.style.transform = "scale(1)";
-      if (ringRef.current) {
-        ringRef.current.style.transform = "scale(1)";
-        ringRef.current.style.borderColor = "rgba(74,158,255,0.4)";
-      }
-    };
+    document.addEventListener("mousemove", onMove);
+    animId = requestAnimationFrame(animateRing);
 
     const interactives = document.querySelectorAll("a, button");
+    const onEnter = () => {
+      cursor.style.transform = "scale(2)";
+      ring.style.transform = "scale(1.5)";
+      ring.style.borderColor = "rgba(42,122,223,0.8)";
+    };
+    const onLeave = () => {
+      cursor.style.transform = "scale(1)";
+      ring.style.transform = "scale(1)";
+      ring.style.borderColor = "rgba(42,122,223,0.4)";
+    };
+
     interactives.forEach((el) => {
-      el.addEventListener("mouseenter", handleEnter);
-      el.addEventListener("mouseleave", handleLeave);
+      el.addEventListener("mouseenter", onEnter);
+      el.addEventListener("mouseleave", onLeave);
     });
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(animId);
       interactives.forEach((el) => {
-        el.removeEventListener("mouseenter", handleEnter);
-        el.removeEventListener("mouseleave", handleLeave);
+        el.removeEventListener("mouseenter", onEnter);
+        el.removeEventListener("mouseleave", onLeave);
       });
     };
   }, []);
 
   return (
     <>
-      <div ref={cursorRef} className="cursor" id="cursor"></div>
-      <div ref={ringRef} className="cursor-ring" id="cursor-ring"></div>
+      <div className="cursor" ref={cursorRef} />
+      <div className="cursor-ring" ref={ringRef} />
     </>
   );
 }
