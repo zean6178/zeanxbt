@@ -2,7 +2,7 @@
 
 const proofItems = [
   {
-    image: "/Tombak Emas.jpg",
+    image: "/Tombak%20Emas.jpg",
     tag: "Graphic Design · Manta Network",
     title: "Manta Network Indonesia T-Shirt",
     desc: "Custom merchandise design created for Manta Indonesia community — one of many design contributions during the moderation run.",
@@ -16,7 +16,7 @@ const proofItems = [
     link: "https://t.me/yogiczbaeng/54832",
   },
   {
-    image: "/amb talk.jpg",
+    image: "/amb%20talk.jpg",
     tag: "Event · Ambassador Talk EP.1",
     title: "Web3: Karir dan Masa Depan",
     desc: "Featured as speaker at Ambassador Talk EP.1 representing Polyhedra Network — alongside ambassadors from Manta, Puffer, Cyber, and Quai Network. 18 September 2024.",
