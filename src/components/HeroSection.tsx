@@ -27,7 +27,7 @@ export default function HeroSection() {
         </h1>
 
         <div className="hero-tagline">
-          <span>AI</span> &times; <span>WEB3</span> &times; <span>FUTURE</span>
+          <span>AI Video</span> &times; <span>WEB3</span> &times; <span>Content Creator</span>
         </div>
 
         <div className="hero-roles">
